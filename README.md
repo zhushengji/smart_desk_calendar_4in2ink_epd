@@ -12,3 +12,9 @@
 7. 后续有时间再升级成完整版本，加上电池之类的，再把能耗优化一下。。。
 
 **本案例意为分享，不可商用**
+
+连线图
+![连线图](https://user-images.githubusercontent.com/32239713/115990367-7432f800-a5f5-11eb-814a-bda2b7357113.png)
+
+微雪官方库文件下载链接：
+https://www.waveshare.net/wiki/4.2inch_e-Paper_Module_(B)
