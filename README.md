@@ -1,3 +1,6 @@
+![222e5ef87437ad4ed91939f67c44424](https://user-images.githubusercontent.com/32239713/115990223-a1cb7180-a5f4-11eb-99aa-4650fc3ebf7b.jpg)
+![f44583d5d1e12d2ce33573ac0861d73](https://user-images.githubusercontent.com/32239713/115990228-a6902580-a5f4-11eb-9d27-a06a9c927a12.jpg)
+
 ## 本项目基于微雪4.2寸三色屏及官方驱动二次开发实现：
 
 1. 使用本项目提供的代码时需要将从官方渠道下载的驱动中的src文件替换为本项目提供的文件
