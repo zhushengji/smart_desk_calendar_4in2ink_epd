@@ -1,9 +1,14 @@
 ![222e5ef87437ad4ed91939f67c44424](https://user-images.githubusercontent.com/32239713/115990223-a1cb7180-a5f4-11eb-99aa-4650fc3ebf7b.jpg)
 ![f44583d5d1e12d2ce33573ac0861d73](https://user-images.githubusercontent.com/32239713/115990228-a6902580-a5f4-11eb-9d27-a06a9c927a12.jpg)
-##2021年5月12日更新
+
+
+
+## 2021年5月12日更新
+
 1.新增断网自动重连
 2.修复周几显示bug
 
+![a088f57b83c7bf80d6852d10b0e49bd](https://user-images.githubusercontent.com/32239713/117945010-78268000-b340-11eb-9efb-b1a03a371a5f.jpg)
 
 ## 本项目基于微雪4.2寸三色屏及官方驱动二次开发实现：
 
