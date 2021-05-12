@@ -20,6 +20,35 @@
   UWORD Imagesize = ((EPD_4IN2B_V2_WIDTH % 8 == 0) ? (EPD_4IN2B_V2_WIDTH / 8 ) : (EPD_4IN2B_V2_WIDTH / 8 + 1)) * EPD_4IN2B_V2_HEIGHT;
   //date and time
   String timedate,timetim="";
+    /*自动重连*/
+  bool AutoConfig()
+{
+    WiFi.begin();
+    //如果觉得时间太长可改
+    for (int i = 0; i < 20; i++)
+    {
+        int wstatus = WiFi.status();
+        if (wstatus == WL_CONNECTED)
+        {
+          Serial.println("WIFI SmartConfig Success");
+          Serial.printf("SSID:%s", WiFi.SSID().c_str());
+          Serial.printf(", PSW:%s\r\n", WiFi.psk().c_str());
+          Serial.print("LocalIP:");
+          Serial.print(WiFi.localIP());
+          Serial.print(" ,GateIP:");
+          Serial.println(WiFi.gatewayIP());
+          return true;
+        }
+        else
+        {
+          Serial.print("WIFI AutoConfig Waiting......");
+          Serial.println(wstatus);
+          delay(1000);
+        }
+    }
+    Serial.println("WIFI AutoConfig Faild!" );
+    return false;
+}
   /*智能配网*/
   bool initwifi(){
     bool f=true;
@@ -64,6 +93,11 @@ void updatetime() {
   Timezone myTZ(mySTD, mySTD);
   time_t localTime = myTZ.toLocal(utc, &tcr);
   weekdays = weekday(localTime);
+  if(weekdays!=7){
+    weekdays-=1;
+  }else{
+    weekdays=1;
+  }
   days = day(localTime);
   months = month(localTime);
   years = year(localTime);
@@ -396,7 +430,11 @@ void setup()
   // 开屏
   EPD_4IN2B_V2_Display(gImage_4in2bc_b, gImage_4in2bc_ry);
   DEV_Delay_ms(5000);
-  if(initwifi()){
+  if(!AutoConfig()){
+    if(initwifi()){
+      initNTP();
+    }
+  }else{
     initNTP();
   }
   EPD_4IN2B_V2_Display(BlackImage, RYImage);
